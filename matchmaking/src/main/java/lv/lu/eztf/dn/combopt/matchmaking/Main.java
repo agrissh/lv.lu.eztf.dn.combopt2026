@@ -11,6 +11,7 @@ import ai.timefold.solver.core.config.solver.EnvironmentMode;
 import ai.timefold.solver.core.config.solver.SolverConfig;
 import lv.lu.eztf.dn.combopt.matchmaking.domain.Game;
 import lv.lu.eztf.dn.combopt.matchmaking.domain.Player;
+import lv.lu.eztf.dn.combopt.matchmaking.domain.Team;
 import lv.lu.eztf.dn.combopt.matchmaking.solver.CostFunction;
 import lv.lu.eztf.dn.combopt.matchmaking.solver.CostFunctionEasy;
 import org.slf4j.Logger;
@@ -27,9 +28,9 @@ public class Main {
         Game problem = Game.createExample();
         SolverFactory<Game> solverFactory = SolverFactory.create(new SolverConfig()
                 .withSolutionClass(Game.class)
-                .withEntityClasses(Player.class)
+                .withEntityClasses(Player.class, Team.class)
                 //.withEasyScoreCalculatorClass(CostFunctionEasy.class)
-                /*.withEnvironmentMode(EnvironmentMode.STEP_ASSERT)
+                .withEnvironmentMode(EnvironmentMode.FULL_ASSERT)
                 .withScoreDirectorFactory(
                         new ScoreDirectorFactoryConfig()
                                 .withConstraintProviderClass(CostFunction.class)
@@ -37,9 +38,9 @@ public class Main {
                                 //.withAssertionScoreDirectorFactory(new ScoreDirectorFactoryConfig()
                                 //        .withEasyScoreCalculatorClass(CostFunctionEasy.class)
                                 //)
-                )*/
-                .withConstraintProviderClass(CostFunction.class)
-                .withTerminationSpentLimit(Duration.ofSeconds(5)));
+                )
+                //.withConstraintProviderClass(CostFunction.class)
+                .withTerminationSpentLimit(Duration.ofSeconds(10)));
         Solver<Game> solver = solverFactory.buildSolver();
         Game solution = solver.solve(problem);
         solution.print();
