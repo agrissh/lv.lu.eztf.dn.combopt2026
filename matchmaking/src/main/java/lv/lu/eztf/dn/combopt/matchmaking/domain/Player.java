@@ -26,7 +26,7 @@ public class Player {
     @PreviousElementShadowVariable(sourceVariableName = "players")
     Player previous;
 
-    public Integer gameStartTime() {
+    /*public Integer gameStartTime() {
         if (this.getAssignedTeam() == null) {
             return null;
         }
@@ -38,7 +38,9 @@ public class Player {
     };
 
     Integer gameStartTime;
-    /*public Integer gameStartTime() {
+    */
+    public Integer gameStartTime() {
+
         return this.getGameStartTime();
     }
 
@@ -58,7 +60,6 @@ public class Player {
 
         this.setGameStartTime(this.getPrevious().getGameStartTime() + 60);
     }
-    */
 
     public Integer waitingCost() {
         return this.waitingTime * this.waitingTime;
