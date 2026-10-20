@@ -3,6 +3,7 @@ package lv.lu.eztf.dn.combopt.matchmaking.domain;
 import ai.timefold.solver.core.api.domain.common.PlanningId;
 import ai.timefold.solver.core.api.domain.entity.PlanningEntity;
 import ai.timefold.solver.core.api.domain.variable.InverseRelationShadowVariable;
+import ai.timefold.solver.core.api.domain.variable.PlanningListVariable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ public class Team {
     Integer nrOfPlayers;
     List<Role> requiredRoles = new ArrayList<>();
 
-    @InverseRelationShadowVariable(sourceVariableName = "assignedTeam")
+    @PlanningListVariable(allowsUnassignedValues = true)
     List<Player> players = new ArrayList<>();
 
     public Double averageRating() {

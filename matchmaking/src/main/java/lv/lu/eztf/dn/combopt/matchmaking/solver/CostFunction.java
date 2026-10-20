@@ -36,6 +36,7 @@ public class CostFunction implements ConstraintProvider {
             //hardWaitingThreshold(constraintFactory),
             softWaitingCost(constraintFactory),
             ratingDiferenceShadowAdjusted(constraintFactory),
+            softStartTimeWaitingCost(constraintFactory),
         };
     }
 
@@ -206,6 +207,16 @@ public class CostFunction implements ConstraintProvider {
                         (long) Math.ceil(config.getRatingDiffPenaltyAtReference() *
                                         (Math.abs(team1.averageRating() - team2.averageRating()) / config.getRatingDiffReference())))
                 .asConstraint("rating difference shadow with config");
+    }
+
+    Constraint softStartTimeWaitingCost(ConstraintFactory constraintFactory) {
+        return constraintFactory
+                .forEach(Player.class)
+                .join(MatchmakingConfig.class)
+                .penalize(HardSoftScore.ONE_SOFT, (player, config) -> (long) Math.ceil(
+                        config.getWaitingPenalyAtReference() * Math.pow((double)
+                        (player.getWaitingTime() + player.gameStartTime()) / config.getWaitingReference(),2)))
+                .asConstraint("soft start waiting cost");
     }
 
     private TriFunction<Team, Double, Team, Team> matchKey =

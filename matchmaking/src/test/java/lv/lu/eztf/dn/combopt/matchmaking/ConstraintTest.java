@@ -14,7 +14,7 @@ public class ConstraintTest {
     @Test
     void testWrongNumberOfPlayers() {
         Team team = new Team("Team A", null, 3, new ArrayList<>(), new ArrayList<>());
-        Player player = new Player("Alice", 2000, team, 15, null, null);
+        Player player = new Player("Alice", 2000, team, 15, null, null, null, null, null);
 
         constraintVerifier.verifyThat(CostFunction::wrongNumberOfPlayers)
                 .given(team, player)
