@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://timefold.ai/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://timefold.ai/xsd/solver https://timefold.ai/xsd/solver/solver.xsd">
+    <environmentMode>PHASE_ASSERT</environmentMode>
+    <!-- Define the model -->
+    <solutionClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Game</solutionClass>
+    <entityClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Player</entityClass>
+    <entityClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Team</entityClass>
+    <!-- Define the score function -->
+    <scoreDirectorFactory>
+        <constraintProviderClass>lv.lu.eztf.dn.combopt.matchmaking.solver.CostFunction</constraintProviderClass>
+    <!--<constraintStreamProfilingEnabled>true</constraintStreamProfilingEnabled>-->
+</scoreDirectorFactory>
+<!-- Configure the optimization algorithms (optional) -->
+    <termination>
+        <secondsSpentLimit>3</secondsSpentLimit>
+    </termination>
+    <constructionHeuristic />
+    <localSearch>
+        <changeMoveSelector />
+        <acceptor>
+            <entityTabuSize>2</entityTabuSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>3</acceptedCountLimit>
+        </forager>
+    </localSearch>
+</solver>

@@ -34,16 +34,19 @@ public class Game {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Game.class);
     public void print() {
+        LOGGER.debug("============" + this.getName() + "==============");
         this.playerList.forEach(player -> {
             LOGGER.debug(player.id + "(" +  player.getRating() + ")[" + player.getRole().getRoleId() + "](wt=" +
                     player.getWaitingTime() +") " +
                     (player.getParty() != null ? "from " + player.getParty().getPartyId() + " " : "")
                     + (player.getAssignedTeam() != null ? player.getAssignedTeam().getId() : "(no team)"));
         });
+        LOGGER.debug("===========================================");
     }
 
     public static Game createExample() {
         Game game = new Game();
+        game.setName("Default Test Game");
 
         game.setConfig(new MatchmakingConfig(
                 100,60,1000,2000
