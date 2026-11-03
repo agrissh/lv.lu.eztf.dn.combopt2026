@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver xmlns="https://timefold.ai/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="https://timefold.ai/xsd/solver https://timefold.ai/xsd/solver/solver.xsd">
+    <enablePreviewFeature>NEIGHBORHOODS</enablePreviewFeature>
     <environmentMode>PHASE_ASSERT</environmentMode>
     <!-- Define the model -->
     <solutionClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Game</solutionClass>
@@ -17,7 +18,9 @@
     </termination>
     <constructionHeuristic />
     <localSearch>
-        <changeMoveSelector />
+        <!--<changeMoveSelector />-->
+        <!--<neighborhoodProviderClass>ai.timefold.solver.core.impl.neighborhood.DefaultNeighborhoodProvider</neighborhoodProviderClass>-->
+        <neighborhoodProviderClass>lv.lu.eztf.dn.combopt.matchmaking.solver.CustomNeighborhoodProvider</neighborhoodProviderClass>
         <acceptor>
             <entityTabuSize>2</entityTabuSize>
         </acceptor>

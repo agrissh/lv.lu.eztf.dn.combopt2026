@@ -59,11 +59,11 @@ public class Game {
 
         Team team1 = new Team();
         team1.setId("Team A");
-        team1.setNrOfPlayers(5);
+        team1.setNrOfPlayers(6);
         team1.getRequiredRoles().addAll(List.of(TANK,ATTACKER,ATTACKER));
         Team team2 = new Team();
         team2.setId("Team B");
-        team2.setNrOfPlayers(5);
+        team2.setNrOfPlayers(6);
         team2.getRequiredRoles().addAll(List.of(TANK,HEALER,ATTACKER));
         team1.setOpponent(team2);
         team2.setOpponent(team1);
