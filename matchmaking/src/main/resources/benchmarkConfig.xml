@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark xmlns="https://timefold.ai/xsd/benchmark" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://timefold.ai/xsd/benchmark https://timefold.ai/xsd/benchmark/benchmark.xsd">
+    <benchmarkDirectory>local/benchmarkReport</benchmarkDirectory>
+
+    <inheritedSolverBenchmark>
+        <solver>
+            <environmentMode>PHASE_ASSERT</environmentMode>
+            <!-- Define the model -->
+            <solutionClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Game</solutionClass>
+            <entityClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Player</entityClass>
+            <entityClass>lv.lu.eztf.dn.combopt.matchmaking.domain.Team</entityClass>
+
+            <!-- Define the score function -->
+            <scoreDirectorFactory>
+                <constraintProviderClass>lv.lu.eztf.dn.combopt.matchmaking.solver.CostFunction</constraintProviderClass>
+            </scoreDirectorFactory>
+
+            <!-- Configure the optimization algorithms (optional) -->
+            <termination>
+                <diminishedReturns />
+                <!--<secondsSpentLimit>5</secondsSpentLimit>-->
+            </termination>
+
+            <constructionHeuristic />
+        </solver>
+        <problemBenchmarks>
+            <solutionFileIOClass>lv.lu.eztf.dn.combopt.matchmaking.domain.GameJsonIO</solutionFileIOClass>
+            <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+            <inputSolutionFile>data/problem12_2_5_3.json</inputSolutionFile>
+            <inputSolutionFile>data/problem403_80_5_3.json</inputSolutionFile>
+            <inputSolutionFile>data/problem1603_320_5_3.json</inputSolutionFile>
+            <inputSolutionFile>data/problem6403_1280_5_3.json</inputSolutionFile>
+            <problemStatisticType>STEP_SCORE</problemStatisticType>
+            <problemStatisticType>BEST_SCORE</problemStatisticType>
+            <!-- THIS FAILS - BUG <singleStatisticType>PICKED_MOVE_TYPE_BEST_SCORE_DIFF</singleStatisticType>
+            <singleStatisticType>CONSTRAINT_MATCH_TOTAL_BEST_SCORE</singleStatisticType>
+            <singleStatisticType>CONSTRAINT_MATCH_TOTAL_STEP_SCORE</singleStatisticType>-->
+        </problemBenchmarks>
+        <subSingleCount>3</subSingleCount>
+    </inheritedSolverBenchmark>
+
+    <solverBenchmark>
+        <name>Default LAHC</name>
+        <solver>
+            <localSearch>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+    <solverBenchmark>
+        <name>Default TABU</name>
+        <solver>
+            <localSearch>
+                <localSearchType>TABU_SEARCH</localSearchType>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+    <solverBenchmark>
+        <name>Default HC</name>
+        <solver>
+            <localSearch>
+                <localSearchType>HILL_CLIMBING</localSearchType>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+</plannerBenchmark>

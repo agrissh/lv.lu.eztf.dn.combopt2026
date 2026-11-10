@@ -1,0 +1,125 @@
+{
+  "config" : {
+    "ratingDiffPenaltyAtReference" : 1000,
+    "ratingDiffReference" : 100,
+    "waitingPenalyAtReference" : 2000,
+    "waitingReference" : 60
+  },
+  "name" : "Game[#12][#2|5|]",
+  "partyList" : [ {
+    "partyId" : "Prt1",
+    "mandatory" : true
+  } ],
+  "playerList" : [ {
+    "id" : "P 1",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1407,
+    "role" : "ATTACKER",
+    "waitingTime" : 40
+  }, {
+    "id" : "P 2",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1376,
+    "role" : "ATTACKER",
+    "waitingTime" : 105
+  }, {
+    "id" : "P 3",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1903,
+    "role" : "HEALER",
+    "waitingTime" : 45
+  }, {
+    "id" : "P 4",
+    "assignedTeam" : null,
+    "party" : "Prt1",
+    "rating" : 1155,
+    "role" : "HEALER",
+    "waitingTime" : 78
+  }, {
+    "id" : "P 5",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1498,
+    "role" : "ATTACKER",
+    "waitingTime" : 88
+  }, {
+    "id" : "P 6",
+    "assignedTeam" : null,
+    "party" : "Prt1",
+    "rating" : 1490,
+    "role" : "HEALER",
+    "waitingTime" : 36
+  }, {
+    "id" : "P 7",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1594,
+    "role" : "HEALER",
+    "waitingTime" : 75
+  }, {
+    "id" : "P 8",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1119,
+    "role" : "ATTACKER",
+    "waitingTime" : 70
+  }, {
+    "id" : "P 9",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2030,
+    "role" : "HEALER",
+    "waitingTime" : 111
+  }, {
+    "id" : "P 10",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1354,
+    "role" : "HEALER",
+    "waitingTime" : 98
+  }, {
+    "id" : "P 11",
+    "assignedTeam" : null,
+    "party" : "Prt1",
+    "rating" : 2379,
+    "role" : "TANK",
+    "waitingTime" : 114
+  }, {
+    "id" : "P 12",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1261,
+    "role" : "HEALER",
+    "waitingTime" : 48
+  } ],
+  "roleList" : [ {
+    "roleId" : "TANK"
+  }, {
+    "roleId" : "ATTACKER"
+  }, {
+    "roleId" : "HEALER"
+  } ],
+  "score" : null,
+  "teamList" : [ {
+    "id" : "Team 1",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 2",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "TANK", "ATTACKER", "ATTACKER", "HEALER" ]
+  }, {
+    "id" : "Team 2",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 1",
+    "players" : [ ],
+    "requiredRoles" : [ ]
+  } ]
+}

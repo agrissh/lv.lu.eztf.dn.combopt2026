@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
@@ -35,6 +37,10 @@ public class Game {
     private static final Logger LOGGER = LoggerFactory.getLogger(Game.class);
     public void print() {
         LOGGER.debug("============" + this.getName() + "==============");
+        this.teamList.forEach(team -> {
+            LOGGER.debug(team.id + " " + team.averageRating() + " {" + team.getRequiredRoles() +"} vs " + team.opponent.getId() + " " + team.opponent.averageRating());
+        });
+        LOGGER.debug("===============PLAYERS=====================");
         this.playerList.forEach(player -> {
             LOGGER.debug(player.id + "(" +  player.getRating() + ")[" + player.getRole().getRoleId() + "](wt=" +
                     player.getWaitingTime() +") " +
@@ -87,6 +93,70 @@ public class Game {
         Player p11 = new Player("Leo", 2000, null, 15, null, ATTACKER);
 
         game.getPlayerList().addAll(List.of(p1,p2,p3,p4,p5,p6,p7,p8,p9,p0,p10,p11));
+
+        return game;
+    }
+
+    public static Game createExample(int playerCount, int teamCount, int teamSize, int partyDensity) {
+        Game game = new Game();
+        game.setName("Game[#"+playerCount+"][#"+teamCount+"|"+teamSize+"|]");
+
+        game.setConfig(new MatchmakingConfig(
+                100,60,1000,2000
+        ));
+
+        Role TANK = new Role("TANK");
+        Role ATTACKER = new Role("ATTACKER");
+        Role HEALER = new Role("HEALER");
+        game.getRoleList().addAll(List.of(TANK,ATTACKER,HEALER));
+
+        for (int i=1;i<=teamCount;i++) {
+            Team team1 = new Team();
+            team1.setId("Team "+i);
+            team1.setNrOfPlayers(teamSize);
+            int rolesNeeded = ThreadLocalRandom.current().nextInt(0, teamSize + 1);
+            for (int j=0;j<rolesNeeded;j++) {
+                team1.getRequiredRoles().add(game.getRoleList().get(ThreadLocalRandom.current().nextInt(game.getRoleList().size())));
+            }
+            game.getTeamList().add(team1);
+        }
+
+        // We have to set opponents for the teams!
+        // Assume there is an even number of teams. Go through and choose every two teams;
+        for (int i=1;i<teamCount;i+=2) {
+            game.getTeamList().get(i-1).setOpponent(game.getTeamList().get(i));
+            game.getTeamList().get(i).setOpponent(game.getTeamList().get(i-1));
+        }
+
+
+        // Create playerCount/10 parties
+        for (int i=1;i <= (playerCount / 10);i++) {
+            Party party1 = new Party("Prt"+i, true);
+            game.getPartyList().add(party1);
+        }
+
+
+        // Lets create a required role list of all teams. Then distribute the roles among players;
+        List<Role> requiredRoles = game.getTeamList().stream()
+                .flatMap((team -> team.getRequiredRoles().stream()))
+                .collect(Collectors.toCollection(ArrayList::new));
+        for (int i=1;i<=playerCount;i++) {
+            int playerRating = ThreadLocalRandom.current().nextInt(500, 2501);
+            int waitingTime = ThreadLocalRandom.current().nextInt(1, 129);
+            Role role;
+            if (i>requiredRoles.size()) {
+                // no roles left - choose randomly
+                role = game.getRoleList().get(ThreadLocalRandom.current().nextInt(game.getRoleList().size()));
+            } else {
+                role = requiredRoles.remove(ThreadLocalRandom.current().nextInt(requiredRoles.size()));
+            }
+
+            Party party = ThreadLocalRandom.current().nextInt(1, 11) >= partyDensity ? null :
+                game.getPartyList().get(ThreadLocalRandom.current().nextInt(game.getPartyList().size()));
+
+            Player p1 = new Player("P "+i, playerRating, null, waitingTime, party, role);
+            game.getPlayerList().add(p1);
+        }
 
         return game;
     }

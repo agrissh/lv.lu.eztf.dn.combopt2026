@@ -1,0 +1,951 @@
+{
+  "config" : {
+    "ratingDiffPenaltyAtReference" : 1000,
+    "ratingDiffReference" : 100,
+    "waitingPenalyAtReference" : 2000,
+    "waitingReference" : 60
+  },
+  "name" : "Game[#103][#20|5|]",
+  "partyList" : [ {
+    "partyId" : "Prt1",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt2",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt3",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt4",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt5",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt6",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt7",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt8",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt9",
+    "mandatory" : true
+  }, {
+    "partyId" : "Prt10",
+    "mandatory" : true
+  } ],
+  "playerList" : [ {
+    "id" : "P 1",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 626,
+    "role" : "TANK",
+    "waitingTime" : 41
+  }, {
+    "id" : "P 2",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2101,
+    "role" : "HEALER",
+    "waitingTime" : 126
+  }, {
+    "id" : "P 3",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1557,
+    "role" : "TANK",
+    "waitingTime" : 58
+  }, {
+    "id" : "P 4",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1475,
+    "role" : "TANK",
+    "waitingTime" : 92
+  }, {
+    "id" : "P 5",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1180,
+    "role" : "TANK",
+    "waitingTime" : 43
+  }, {
+    "id" : "P 6",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2206,
+    "role" : "HEALER",
+    "waitingTime" : 77
+  }, {
+    "id" : "P 7",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2190,
+    "role" : "ATTACKER",
+    "waitingTime" : 93
+  }, {
+    "id" : "P 8",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2034,
+    "role" : "TANK",
+    "waitingTime" : 88
+  }, {
+    "id" : "P 9",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 785,
+    "role" : "TANK",
+    "waitingTime" : 108
+  }, {
+    "id" : "P 10",
+    "assignedTeam" : null,
+    "party" : "Prt9",
+    "rating" : 1162,
+    "role" : "ATTACKER",
+    "waitingTime" : 96
+  }, {
+    "id" : "P 11",
+    "assignedTeam" : null,
+    "party" : "Prt10",
+    "rating" : 1170,
+    "role" : "ATTACKER",
+    "waitingTime" : 13
+  }, {
+    "id" : "P 12",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1610,
+    "role" : "TANK",
+    "waitingTime" : 41
+  }, {
+    "id" : "P 13",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 793,
+    "role" : "ATTACKER",
+    "waitingTime" : 21
+  }, {
+    "id" : "P 14",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2343,
+    "role" : "TANK",
+    "waitingTime" : 55
+  }, {
+    "id" : "P 15",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2294,
+    "role" : "ATTACKER",
+    "waitingTime" : 86
+  }, {
+    "id" : "P 16",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 673,
+    "role" : "ATTACKER",
+    "waitingTime" : 53
+  }, {
+    "id" : "P 17",
+    "assignedTeam" : null,
+    "party" : "Prt4",
+    "rating" : 1660,
+    "role" : "TANK",
+    "waitingTime" : 119
+  }, {
+    "id" : "P 18",
+    "assignedTeam" : null,
+    "party" : "Prt6",
+    "rating" : 1522,
+    "role" : "TANK",
+    "waitingTime" : 75
+  }, {
+    "id" : "P 19",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2057,
+    "role" : "ATTACKER",
+    "waitingTime" : 43
+  }, {
+    "id" : "P 20",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1857,
+    "role" : "ATTACKER",
+    "waitingTime" : 116
+  }, {
+    "id" : "P 21",
+    "assignedTeam" : null,
+    "party" : "Prt2",
+    "rating" : 2478,
+    "role" : "ATTACKER",
+    "waitingTime" : 35
+  }, {
+    "id" : "P 22",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1972,
+    "role" : "ATTACKER",
+    "waitingTime" : 24
+  }, {
+    "id" : "P 23",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 670,
+    "role" : "ATTACKER",
+    "waitingTime" : 43
+  }, {
+    "id" : "P 24",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1504,
+    "role" : "HEALER",
+    "waitingTime" : 128
+  }, {
+    "id" : "P 25",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 874,
+    "role" : "TANK",
+    "waitingTime" : 45
+  }, {
+    "id" : "P 26",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1333,
+    "role" : "HEALER",
+    "waitingTime" : 35
+  }, {
+    "id" : "P 27",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1428,
+    "role" : "ATTACKER",
+    "waitingTime" : 76
+  }, {
+    "id" : "P 28",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1732,
+    "role" : "TANK",
+    "waitingTime" : 102
+  }, {
+    "id" : "P 29",
+    "assignedTeam" : null,
+    "party" : "Prt5",
+    "rating" : 1856,
+    "role" : "TANK",
+    "waitingTime" : 34
+  }, {
+    "id" : "P 30",
+    "assignedTeam" : null,
+    "party" : "Prt2",
+    "rating" : 679,
+    "role" : "HEALER",
+    "waitingTime" : 111
+  }, {
+    "id" : "P 31",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2032,
+    "role" : "HEALER",
+    "waitingTime" : 116
+  }, {
+    "id" : "P 32",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 931,
+    "role" : "ATTACKER",
+    "waitingTime" : 88
+  }, {
+    "id" : "P 33",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2111,
+    "role" : "ATTACKER",
+    "waitingTime" : 79
+  }, {
+    "id" : "P 34",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1256,
+    "role" : "HEALER",
+    "waitingTime" : 69
+  }, {
+    "id" : "P 35",
+    "assignedTeam" : null,
+    "party" : "Prt5",
+    "rating" : 2468,
+    "role" : "HEALER",
+    "waitingTime" : 46
+  }, {
+    "id" : "P 36",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2342,
+    "role" : "ATTACKER",
+    "waitingTime" : 12
+  }, {
+    "id" : "P 37",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1653,
+    "role" : "ATTACKER",
+    "waitingTime" : 33
+  }, {
+    "id" : "P 38",
+    "assignedTeam" : null,
+    "party" : "Prt2",
+    "rating" : 2182,
+    "role" : "TANK",
+    "waitingTime" : 55
+  }, {
+    "id" : "P 39",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1656,
+    "role" : "TANK",
+    "waitingTime" : 27
+  }, {
+    "id" : "P 40",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1664,
+    "role" : "HEALER",
+    "waitingTime" : 33
+  }, {
+    "id" : "P 41",
+    "assignedTeam" : null,
+    "party" : "Prt7",
+    "rating" : 2283,
+    "role" : "ATTACKER",
+    "waitingTime" : 1
+  }, {
+    "id" : "P 42",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2074,
+    "role" : "TANK",
+    "waitingTime" : 43
+  }, {
+    "id" : "P 43",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 630,
+    "role" : "HEALER",
+    "waitingTime" : 45
+  }, {
+    "id" : "P 44",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 584,
+    "role" : "ATTACKER",
+    "waitingTime" : 60
+  }, {
+    "id" : "P 45",
+    "assignedTeam" : null,
+    "party" : "Prt7",
+    "rating" : 2367,
+    "role" : "TANK",
+    "waitingTime" : 4
+  }, {
+    "id" : "P 46",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1326,
+    "role" : "TANK",
+    "waitingTime" : 10
+  }, {
+    "id" : "P 47",
+    "assignedTeam" : null,
+    "party" : "Prt2",
+    "rating" : 1590,
+    "role" : "TANK",
+    "waitingTime" : 6
+  }, {
+    "id" : "P 48",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1603,
+    "role" : "TANK",
+    "waitingTime" : 6
+  }, {
+    "id" : "P 49",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2128,
+    "role" : "HEALER",
+    "waitingTime" : 45
+  }, {
+    "id" : "P 50",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2370,
+    "role" : "TANK",
+    "waitingTime" : 47
+  }, {
+    "id" : "P 51",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2171,
+    "role" : "HEALER",
+    "waitingTime" : 69
+  }, {
+    "id" : "P 52",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1837,
+    "role" : "TANK",
+    "waitingTime" : 77
+  }, {
+    "id" : "P 53",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1228,
+    "role" : "TANK",
+    "waitingTime" : 107
+  }, {
+    "id" : "P 54",
+    "assignedTeam" : null,
+    "party" : "Prt5",
+    "rating" : 1346,
+    "role" : "ATTACKER",
+    "waitingTime" : 81
+  }, {
+    "id" : "P 55",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 977,
+    "role" : "HEALER",
+    "waitingTime" : 83
+  }, {
+    "id" : "P 56",
+    "assignedTeam" : null,
+    "party" : "Prt10",
+    "rating" : 730,
+    "role" : "TANK",
+    "waitingTime" : 88
+  }, {
+    "id" : "P 57",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2074,
+    "role" : "HEALER",
+    "waitingTime" : 51
+  }, {
+    "id" : "P 58",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1344,
+    "role" : "HEALER",
+    "waitingTime" : 89
+  }, {
+    "id" : "P 59",
+    "assignedTeam" : null,
+    "party" : "Prt1",
+    "rating" : 2188,
+    "role" : "TANK",
+    "waitingTime" : 86
+  }, {
+    "id" : "P 60",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1947,
+    "role" : "HEALER",
+    "waitingTime" : 103
+  }, {
+    "id" : "P 61",
+    "assignedTeam" : null,
+    "party" : "Prt6",
+    "rating" : 1394,
+    "role" : "TANK",
+    "waitingTime" : 3
+  }, {
+    "id" : "P 62",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1826,
+    "role" : "HEALER",
+    "waitingTime" : 43
+  }, {
+    "id" : "P 63",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2275,
+    "role" : "ATTACKER",
+    "waitingTime" : 104
+  }, {
+    "id" : "P 64",
+    "assignedTeam" : null,
+    "party" : "Prt8",
+    "rating" : 866,
+    "role" : "HEALER",
+    "waitingTime" : 17
+  }, {
+    "id" : "P 65",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1436,
+    "role" : "ATTACKER",
+    "waitingTime" : 102
+  }, {
+    "id" : "P 66",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1965,
+    "role" : "HEALER",
+    "waitingTime" : 100
+  }, {
+    "id" : "P 67",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2403,
+    "role" : "HEALER",
+    "waitingTime" : 113
+  }, {
+    "id" : "P 68",
+    "assignedTeam" : null,
+    "party" : "Prt10",
+    "rating" : 620,
+    "role" : "TANK",
+    "waitingTime" : 36
+  }, {
+    "id" : "P 69",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1252,
+    "role" : "HEALER",
+    "waitingTime" : 33
+  }, {
+    "id" : "P 70",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2380,
+    "role" : "TANK",
+    "waitingTime" : 94
+  }, {
+    "id" : "P 71",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1669,
+    "role" : "TANK",
+    "waitingTime" : 107
+  }, {
+    "id" : "P 72",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2398,
+    "role" : "ATTACKER",
+    "waitingTime" : 124
+  }, {
+    "id" : "P 73",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1829,
+    "role" : "HEALER",
+    "waitingTime" : 67
+  }, {
+    "id" : "P 74",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2263,
+    "role" : "TANK",
+    "waitingTime" : 4
+  }, {
+    "id" : "P 75",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 681,
+    "role" : "TANK",
+    "waitingTime" : 122
+  }, {
+    "id" : "P 76",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2048,
+    "role" : "TANK",
+    "waitingTime" : 48
+  }, {
+    "id" : "P 77",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 532,
+    "role" : "ATTACKER",
+    "waitingTime" : 23
+  }, {
+    "id" : "P 78",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1917,
+    "role" : "ATTACKER",
+    "waitingTime" : 44
+  }, {
+    "id" : "P 79",
+    "assignedTeam" : null,
+    "party" : "Prt5",
+    "rating" : 1233,
+    "role" : "HEALER",
+    "waitingTime" : 85
+  }, {
+    "id" : "P 80",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 761,
+    "role" : "TANK",
+    "waitingTime" : 71
+  }, {
+    "id" : "P 81",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1560,
+    "role" : "HEALER",
+    "waitingTime" : 58
+  }, {
+    "id" : "P 82",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1181,
+    "role" : "HEALER",
+    "waitingTime" : 110
+  }, {
+    "id" : "P 83",
+    "assignedTeam" : null,
+    "party" : "Prt10",
+    "rating" : 1360,
+    "role" : "TANK",
+    "waitingTime" : 83
+  }, {
+    "id" : "P 84",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2125,
+    "role" : "TANK",
+    "waitingTime" : 124
+  }, {
+    "id" : "P 85",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2308,
+    "role" : "HEALER",
+    "waitingTime" : 42
+  }, {
+    "id" : "P 86",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 553,
+    "role" : "TANK",
+    "waitingTime" : 37
+  }, {
+    "id" : "P 87",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1922,
+    "role" : "TANK",
+    "waitingTime" : 51
+  }, {
+    "id" : "P 88",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1448,
+    "role" : "TANK",
+    "waitingTime" : 118
+  }, {
+    "id" : "P 89",
+    "assignedTeam" : null,
+    "party" : "Prt10",
+    "rating" : 518,
+    "role" : "HEALER",
+    "waitingTime" : 8
+  }, {
+    "id" : "P 90",
+    "assignedTeam" : null,
+    "party" : "Prt4",
+    "rating" : 2281,
+    "role" : "ATTACKER",
+    "waitingTime" : 29
+  }, {
+    "id" : "P 91",
+    "assignedTeam" : null,
+    "party" : "Prt2",
+    "rating" : 1480,
+    "role" : "TANK",
+    "waitingTime" : 68
+  }, {
+    "id" : "P 92",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2332,
+    "role" : "ATTACKER",
+    "waitingTime" : 14
+  }, {
+    "id" : "P 93",
+    "assignedTeam" : null,
+    "party" : "Prt6",
+    "rating" : 1879,
+    "role" : "HEALER",
+    "waitingTime" : 42
+  }, {
+    "id" : "P 94",
+    "assignedTeam" : null,
+    "party" : "Prt6",
+    "rating" : 1362,
+    "role" : "HEALER",
+    "waitingTime" : 97
+  }, {
+    "id" : "P 95",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2453,
+    "role" : "HEALER",
+    "waitingTime" : 11
+  }, {
+    "id" : "P 96",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 2300,
+    "role" : "ATTACKER",
+    "waitingTime" : 75
+  }, {
+    "id" : "P 97",
+    "assignedTeam" : null,
+    "party" : "Prt2",
+    "rating" : 2474,
+    "role" : "ATTACKER",
+    "waitingTime" : 2
+  }, {
+    "id" : "P 98",
+    "assignedTeam" : null,
+    "party" : "Prt7",
+    "rating" : 2086,
+    "role" : "ATTACKER",
+    "waitingTime" : 113
+  }, {
+    "id" : "P 99",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 694,
+    "role" : "ATTACKER",
+    "waitingTime" : 64
+  }, {
+    "id" : "P 100",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 1484,
+    "role" : "ATTACKER",
+    "waitingTime" : 104
+  }, {
+    "id" : "P 101",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 877,
+    "role" : "ATTACKER",
+    "waitingTime" : 103
+  }, {
+    "id" : "P 102",
+    "assignedTeam" : null,
+    "party" : "Prt10",
+    "rating" : 1759,
+    "role" : "HEALER",
+    "waitingTime" : 49
+  }, {
+    "id" : "P 103",
+    "assignedTeam" : null,
+    "party" : null,
+    "rating" : 667,
+    "role" : "TANK",
+    "waitingTime" : 73
+  } ],
+  "roleList" : [ {
+    "roleId" : "TANK"
+  }, {
+    "roleId" : "ATTACKER"
+  }, {
+    "roleId" : "HEALER"
+  } ],
+  "score" : null,
+  "teamList" : [ {
+    "id" : "Team 1",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 2",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "TANK", "TANK", "ATTACKER" ]
+  }, {
+    "id" : "Team 2",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 1",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "TANK" ]
+  }, {
+    "id" : "Team 3",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 4",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "TANK" ]
+  }, {
+    "id" : "Team 4",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 3",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "ATTACKER", "TANK", "ATTACKER" ]
+  }, {
+    "id" : "Team 5",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 6",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "TANK" ]
+  }, {
+    "id" : "Team 6",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 5",
+    "players" : [ ],
+    "requiredRoles" : [ "HEALER", "HEALER", "ATTACKER", "TANK", "ATTACKER" ]
+  }, {
+    "id" : "Team 7",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 8",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "TANK" ]
+  }, {
+    "id" : "Team 8",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 7",
+    "players" : [ ],
+    "requiredRoles" : [ ]
+  }, {
+    "id" : "Team 9",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 10",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "HEALER" ]
+  }, {
+    "id" : "Team 10",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 9",
+    "players" : [ ],
+    "requiredRoles" : [ "HEALER", "TANK", "ATTACKER", "ATTACKER" ]
+  }, {
+    "id" : "Team 11",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 12",
+    "players" : [ ],
+    "requiredRoles" : [ ]
+  }, {
+    "id" : "Team 12",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 11",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK" ]
+  }, {
+    "id" : "Team 13",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 14",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "HEALER", "HEALER" ]
+  }, {
+    "id" : "Team 14",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 13",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "ATTACKER", "ATTACKER" ]
+  }, {
+    "id" : "Team 15",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 16",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "ATTACKER" ]
+  }, {
+    "id" : "Team 16",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 15",
+    "players" : [ ],
+    "requiredRoles" : [ "TANK", "HEALER", "TANK", "ATTACKER", "TANK" ]
+  }, {
+    "id" : "Team 17",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 18",
+    "players" : [ ],
+    "requiredRoles" : [ ]
+  }, {
+    "id" : "Team 18",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 17",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "ATTACKER" ]
+  }, {
+    "id" : "Team 19",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 20",
+    "players" : [ ],
+    "requiredRoles" : [ "ATTACKER", "ATTACKER", "HEALER" ]
+  }, {
+    "id" : "Team 20",
+    "availableRoles" : [ ],
+    "averageRating" : 0.0,
+    "nrOfPlayers" : 5,
+    "numberOfPlayers" : 0,
+    "opponent" : "Team 19",
+    "players" : [ ],
+    "requiredRoles" : [ "HEALER", "TANK", "TANK", "TANK", "ATTACKER" ]
+  } ]
+}
