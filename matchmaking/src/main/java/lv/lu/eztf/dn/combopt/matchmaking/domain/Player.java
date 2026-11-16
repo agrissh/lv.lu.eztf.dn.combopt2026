@@ -3,6 +3,7 @@ package lv.lu.eztf.dn.combopt.matchmaking.domain;
 import ai.timefold.solver.core.api.domain.common.PlanningId;
 import ai.timefold.solver.core.api.domain.entity.PlanningEntity;
 import ai.timefold.solver.core.api.domain.variable.PlanningVariable;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -12,7 +13,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor(onConstructor_ = @JsonCreator)
+@AllArgsConstructor
 @PlanningEntity
 @JsonIdentityInfo(scope = Player.class, property = "id", generator = ObjectIdGenerators.PropertyGenerator.class)
 public class Player {

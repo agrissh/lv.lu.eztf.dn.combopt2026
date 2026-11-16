@@ -3,10 +3,7 @@ package lv.lu.eztf.dn.combopt.matchmaking.domain;
 import ai.timefold.solver.core.api.domain.common.PlanningId;
 import ai.timefold.solver.core.api.domain.entity.PlanningEntity;
 import ai.timefold.solver.core.api.domain.variable.InverseRelationShadowVariable;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor(onConstructor_ = @JsonCreator)
+@AllArgsConstructor
 @PlanningEntity
 @JsonIdentityInfo(scope = Team.class, property = "id", generator = ObjectIdGenerators.PropertyGenerator.class)
 public class Team {
@@ -46,6 +44,7 @@ public class Team {
     }
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonIdentityReference(alwaysAsId = true)
     public List<Role> availableRoles() {
         return players.stream().map(Player::getRole).toList();
     }

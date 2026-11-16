@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- Use spring boot parent to use its native profile -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.1.1</version>
+    </parent>
 
     <groupId>lv.lu.eztf.dn.combopt</groupId>
     <artifactId>matchmaking</artifactId>
@@ -11,21 +17,29 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.org.junit.jupiter>6.1.3</version.org.junit.jupiter>
+
+        <version.ai.timefold.solver.enterprise>2.8.0</version.ai.timefold.solver.enterprise>
+        <version.org.springframework.boot>${project.parent.version}</version.org.springframework.boot>
+
+        <version.compiler.plugin>3.16.0</version.compiler.plugin>
+        <version.surefire.plugin>3.5.6</version.surefire.plugin>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>ai.timefold.solver.enterprise</groupId>
-                <artifactId>timefold-solver-enterprise-bom</artifactId>
-                <version>2.8.0</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${version.org.springframework.boot}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>1.6.3</version>
+                <groupId>ai.timefold.solver.enterprise</groupId>
+                <artifactId>timefold-solver-enterprise-bom</artifactId>
+                <version>${version.ai.timefold.solver.enterprise}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
@@ -38,14 +52,33 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- Spring boot -->
         <dependency>
-            <groupId>ai.timefold.solver.enterprise</groupId>
-            <artifactId>timefold-solver-enterprise-core</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
+            <groupId>ai.timefold.solver.enterprise</groupId>
+            <artifactId>timefold-solver-enterprise-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Swagger -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <scope>test</scope>
         </dependency>
         <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -73,13 +106,67 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.6.3</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.compiler.plugin}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.surefire.plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${version.org.springframework.boot}</version>
+                <executions>
+                    <!-- Repackage the archive produced by maven-jar-plugin into an executable JAR file. -->
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <mainClass>lv.lu.eztf.dn.combopt.matchmaking.Main</mainClass>
+                    <!-- optimizedLaunch disables the C2 compiler, which has a massive performance impact -->
+                    <optimizedLaunch>false</optimizedLaunch>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>enterprise</id>
+            <activation>
+                <property>
+                    <name>enterprise</name>
+                </property>
+            </activation>
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>ai.timefold.solver.enterprise</groupId>
+                        <artifactId>timefold-solver-enterprise-bom</artifactId>
+                        <version>${version.ai.timefold.solver.enterprise}</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+            <dependencies>
+                <dependency>
+                    <groupId>ai.timefold.solver.enterprise</groupId>
+                    <artifactId>timefold-solver-enterprise-spring-boot-starter</artifactId>
+                </dependency>
+            </dependencies>
+            <properties>
+                <spring-boot.run.profiles>enterprise</spring-boot.run.profiles>
+            </properties>
+        </profile>
+    </profiles>
+
+
 </project>

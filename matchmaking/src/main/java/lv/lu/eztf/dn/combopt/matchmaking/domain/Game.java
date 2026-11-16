@@ -3,6 +3,7 @@ package lv.lu.eztf.dn.combopt.matchmaking.domain;
 import ai.timefold.solver.core.api.domain.solution.*;
 import ai.timefold.solver.core.api.domain.valuerange.ValueRangeProvider;
 import ai.timefold.solver.core.api.score.HardSoftScore;
+import ai.timefold.solver.core.api.solver.SolverStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,7 @@ public class Game {
     List<Role> roleList = new ArrayList<>();
     @ProblemFactProperty
     MatchmakingConfig config = new MatchmakingConfig();
+    SolverStatus solverStatus;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Game.class);
     public void print() {
